@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: speechai-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt && python -m spacy download en_core_web_sm && python -c "import nltk; nltk.download('vader_lexicon')"
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app:app
+    healthCheckPath: /api/health
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DATABASE
+        value: speech_nlp_db
+      - key: FRONTEND_ORIGIN
+        sync: false
+      - key: WHISPER_MODEL
+        value: base

@@ -1,0 +1,15 @@
+# Local configuration and environment secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Dependencies and build output
+frontend/node_modules/
+frontend/dist/
+__pycache__/
+*.py[cod]
+.venv/
+venv/

@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #14211e;
+  --color-mint: #c8f36a;
+  --color-forest: #173c32;
+  --shadow-soft: 0 18px 55px rgba(29, 51, 43, 0.08);
+}
+
+:root {
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  color: #19241f;
+  background: #f6f8f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f6f8f4;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.dark {
+  color: #e9f0eb;
+  background: #101a16;
+}
+
+.dark #root > div {
+  color: #e9f0eb;
+  background: #101a16;
+}
+
+.dark body {
+  background: #101a16;
+}
+
+.dark h1,
+.dark h2,
+.dark h3 {
+  color: #e8f0ea;
+}
+
+.dark p {
+  color: #a5b3aa;
+}
+
+.dark .surface {
+  border-color: #26372f;
+  background: #17241e;
+  color: #e9f0eb;
+}
+
+.dark .muted {
+  color: #9aaba1;
+}
+
+.dark .soft-surface {
+  background: #1d2d25;
+}
+
+.dark .line {
+  border-color: #2b3b33;
+}
+
+.dark .input-surface {
+  border-color: #34463c;
+  background: #142019;
+  color: #e9f0eb;
+}
+
+.dark .hero-bg {
+  background-color: #1a3428;
+}
+
+.dark .hero-bg [class*="bg-[#dce9d6]"] {
+  background-color: rgba(43, 72, 54, 0.7) !important;
+}
+
+.dark .hero-bg [class*="bg-white"] {
+  background-color: rgba(23, 36, 30, 0.86) !important;
+}
+
+.dark .hero-bg [class*="text-[#3d5b47]"],
+.dark .hero-bg [class*="text-[#52745a]"] {
+  color: #d2e3d4 !important;
+}
+
+.dark .nav-bg nav button {
+  color: #b4c2b8;
+}
+
+.dark .nav-bg nav button[class*="bg-[#edf3eb]"] {
+  background-color: #24382b;
+  color: #dcebdd;
+}
+
+.dark [class*="bg-[#f7f9f5]"],
+.dark [class*="bg-[#f8faf6]"],
+.dark [class*="bg-[#f5f8f2]"] {
+  background-color: #1d2d25;
+}
+
+.dark .nav-bg {
+  border-color: #26372f;
+  background: rgba(16, 26, 22, 0.9);
+}
+
+::selection {
+  background: #d4f59a;
+  color: #173c32;
+}
+
+audio {
+  width: 100%;
+  height: 40px;
+}
+
+.fade-in {
+  animation: fade-in 320ms ease-out both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
